@@ -1,0 +1,11 @@
+{
+  "name": "node-redis-cache",
+  "description": "A Node app that caches data in Redis.",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "Graham Swan <thinkswan@gmail.com>",
+  "license": "MIT",
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {}
+}
