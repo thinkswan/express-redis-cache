@@ -1,6 +1,6 @@
 {
   "name": "node-redis-cache",
-  "description": "A Node app that caches data in Redis.",
+  "description": "An Express app that caches data in Redis.",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Graham Swan <thinkswan@gmail.com>",
