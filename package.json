@@ -2,10 +2,18 @@
   "name": "node-redis-cache",
   "description": "A Node app that caches data in Redis.",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "index.js",
   "author": "Graham Swan <thinkswan@gmail.com>",
   "license": "MIT",
-  "scripts": {},
-  "dependencies": {},
-  "devDependencies": {}
+  "scripts": {
+    "start": "nodemon index"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0",
+    "redis": "^2.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
 }
