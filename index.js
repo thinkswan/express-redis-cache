@@ -28,14 +28,26 @@ async function getRepos(req, res, next) {
     client.setex(username, 3600, repos)
 
     res.send(setResponse(username, repos))
-  } catch (error) {
-    console.error(error)
+  } catch (err) {
+    console.error(err)
 
     res.status(500)
   }
 }
 
-app.get("/repos/:username", getRepos)
+// Caching middleware
+function cache(req, res, next) {
+  const { username } = req.params
+
+  client.get(username, (err, data) => {
+    if (err) throw err
+    if (!data) return next()
+
+    res.send(setResponse(username, data))
+  })
+}
+
+app.get("/repos/:username", cache, getRepos)
 
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`)
